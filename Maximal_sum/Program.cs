@@ -15,27 +15,26 @@ namespace MyProject
         }
         static int GetMaxSumOfConsecutiveNumbers(int[] arr)
         {
-            int size = arr.Length;
-            int previousElement = arr[0];
-            int currentSum = 0;
-            int maxSum = currentSum;
+            int maxSumToCurrentPosition = arr[0];
+            int maxSumConsecutive = arr[0];
 
-            for (int i = 1; i < size; i++)
+            for (int i = 1; i < arr.Length; i++)
             {
-                if (arr[i] < previousElement || i == size - 1)
+                if (arr[i] > maxSumToCurrentPosition + arr[i])
                 {
-                    if (maxSum < currentSum)
-                    {
-                        maxSum = currentSum;
-                    }
-                    currentSum = 0;
-                    previousElement = arr[i];
-                    continue;
+                    maxSumToCurrentPosition = arr[i];
                 }
-                currentSum += arr[i];
-                previousElement = arr[i];
+                else
+                {
+                    maxSumToCurrentPosition = maxSumToCurrentPosition + arr[i];
+                }
+
+                if (maxSumToCurrentPosition > maxSumConsecutive)
+                {
+                    maxSumConsecutive = maxSumToCurrent;
+                }
             }
-            return maxSum;
+            return maxSumConsecutive;
         }
         static void Main(string[] args)
         {
