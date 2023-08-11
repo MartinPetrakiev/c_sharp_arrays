@@ -4,7 +4,7 @@ namespace MyProject
 {
     class Program
     {
-        static int GetMaxSumKElementsArray(int[] arr, int k)
+        static int GetMaxSumOfKElements(int[] arr, int k)
         {
             int[] sortedArray = GetSelectionSortedArray(arr);
             int sum = 0;
@@ -51,7 +51,7 @@ namespace MyProject
 
             int[] myArray = InitializeIntArray(n);
 
-            Console.WriteLine(GetMaxSumKElementsArray(myArray, k));
+            Console.WriteLine(GetMaxSumOfKElements(myArray, k));
         }
     }
 }
