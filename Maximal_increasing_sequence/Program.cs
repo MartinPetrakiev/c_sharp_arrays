@@ -4,7 +4,7 @@ namespace MyProject
 {
     class Program
     {
-        static int MaximalIncreasingSequenceCounter(int[] arr)
+        static int FindMaxIncreasingSequenceLength(int[] arr)
         {
             int size = arr.Length;
             int previousElement = arr[0];
@@ -43,7 +43,7 @@ namespace MyProject
 
             int[] myArray = InitializeIntArray(n);
 
-            Console.WriteLine(MaximalIncreasingSequenceCounter(myArray));
+            Console.WriteLine(FindMaxIncreasingSequenceLength(myArray));
         }
     }
 }
