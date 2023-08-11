@@ -4,7 +4,7 @@ namespace MyProject
 {
     class Program
     {
-        static int MaximalSequenceCounter(int[] arr)
+        static int FindMaxEqualSequenceLength(int[] arr)
         {
             Dictionary<int, int> arrayElementOccurances = new Dictionary<int, int>();
             int currentSequenceCounter = 0;
@@ -57,7 +57,7 @@ namespace MyProject
 
             int[] myArray = InitializeIntArray(n);
 
-            Console.WriteLine(MaximalSequenceCounter(myArray));
+            Console.WriteLine(FindMaxEqualSequenceLength(myArray));
         }
     }
 }
