@@ -6,7 +6,7 @@ namespace MyProject
     {
         static int GetMaxSumOfKElements(int[] arr, int k)
         {
-            int[] sortedArray = GetSelectionSortedArray(arr);
+            int[] sortedArray = GetSelectionSortedArrayDescending(arr);
             int sum = 0;
 
             for (int i = 0; i < k; i++)
@@ -25,7 +25,7 @@ namespace MyProject
             return arr;
         }
 
-        public static int[] GetSelectionSortedArray(int[] numbersArray)
+        public static int[] GetSelectionSortedArrayDescending(int[] numbersArray)
         {
             int arrayLength = numbersArray.Length;
             for (int i = 0; i < arrayLength - 1; i++)
