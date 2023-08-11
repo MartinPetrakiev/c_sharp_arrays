@@ -4,7 +4,7 @@ namespace MyProject
 {
     class Program
     {
-        static int[] InitializeArray(int n)
+        static int[] InitializeIntArray(int n)
         {
             int[] arr = new int[n];
 
@@ -13,7 +13,7 @@ namespace MyProject
 
             return arr;
         }
-        static string CompareElementsOfTwoArrays(int[] arrayOne, int[] arrayTwo, int size)
+        static string CompareArraysOfSizeN(int[] arrayOne, int[] arrayTwo, int size)
         {
             string output = "Equal";
 
@@ -35,7 +35,7 @@ namespace MyProject
             int[] arrayOne = InitializeArray(n);
             int[] arrayTwo = InitializeArray(n);
 
-            Console.WriteLine(CompareElementsOfTwoArrays(arrayOne, arrayTwo, n));
+            Console.WriteLine(CompareArraysOfSizeN(arrayOne, arrayTwo, n));
         }
     }
 }
