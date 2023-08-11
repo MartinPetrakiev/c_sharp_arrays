@@ -13,7 +13,7 @@ namespace MyProject
 
             return arr;
         }
-        static string LexicographicCharArrayComparer(char[] arrayOne, char[] arrayTwo)
+        static string CompareLexografically(char[] arrayOne, char[] arrayTwo)
         {
             string output = "=";
             int size = Math.Min(arrayOne.Length, arrayTwo.Length);
@@ -60,7 +60,7 @@ namespace MyProject
             char[] arrayOne = InitializeCharArray(inputString1);
             char[] arrayTwo = InitializeCharArray(inputString2);
 
-            Console.WriteLine(LexicographicCharArrayComparer(arrayOne, arrayTwo));
+            Console.WriteLine(CompareLexografically(arrayOne, arrayTwo));
         }
     }
 }

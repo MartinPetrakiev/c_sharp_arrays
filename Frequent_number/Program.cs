@@ -4,7 +4,7 @@ namespace MyProject
 {
     class Program
     {
-        static string MostFrequentNumberFinder(int[] arr)
+        static string FindMostFrequentNumber(int[] arr)
         {
             Dictionary<int, int> numberOccurances = new Dictionary<int, int>();
 
@@ -48,7 +48,7 @@ namespace MyProject
 
             int[] myArray = InitializeIntArray(n);
 
-            Console.WriteLine(MostFrequentNumberFinder(myArray));
+            Console.WriteLine(FindMostFrequentNumber(myArray));
         }
     }
 }
