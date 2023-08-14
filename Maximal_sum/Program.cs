@@ -31,7 +31,7 @@ namespace MyProject
 
                 if (maxSumToCurrentPosition > maxSumConsecutive)
                 {
-                    maxSumConsecutive = maxSumToCurrent;
+                    maxSumConsecutive = maxSumToCurrentPosition;
                 }
             }
             return maxSumConsecutive;
