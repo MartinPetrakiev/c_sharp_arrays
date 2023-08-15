@@ -13,7 +13,6 @@ namespace MyProject
 
             return arr;
         }
-
         public static void PrintIndexOfLettersFormAlphabet(string str, char[] array)
         {
             foreach (char c in str)
