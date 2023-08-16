@@ -9,7 +9,9 @@ namespace MyProject
             int[] arr = new int[n];
 
             for (int i = 0; i < n; i++)
+            {
                 arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
 
             return arr;
         }
@@ -20,9 +22,11 @@ namespace MyProject
             int rightElementIndex = n - 1;
             int middleElementIndex;
             bool indexFound = false;
+
             while (leftElementIndex <= rightElementIndex)
             {
                 middleElementIndex = (leftElementIndex + rightElementIndex) / 2;
+                
                 if (array[middleElementIndex] < x)
                 {
                     leftElementIndex = middleElementIndex + 1;
@@ -38,16 +42,19 @@ namespace MyProject
                     break;
                 }
             }
+
             if (!indexFound)
             {
                 Console.WriteLine(-1);
             }
         }
+
         static void Main(string[] args)
         {
             int n = Convert.ToInt32(Console.ReadLine());
             int[] myArray = InitializeIntArray(n);
             int x = Convert.ToInt32(Console.ReadLine());
+            
             BinarySearch(myArray, n, x);
         }
     }

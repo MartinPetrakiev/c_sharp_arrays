@@ -9,26 +9,30 @@ namespace MyProject
             bool[] arr = new bool[n + 1];
 
             for (int i = 0; i <= n; i++)
+            {
                 arr[i] = true;
+            }
 
             return arr;
         }
         static void GetBiggestPrimeUpToN(int n)
         {
-            bool[] arr = InitializeBoolArray(n); 
+            bool[] array = InitializeBoolArray(n); 
+
             for (int i = 2; i * i <= n; i++) //i = 2, 3, 4, ..., not exceeding √n
             {
-                if (arr[i] == true) 
+                if (array[i] == true) 
                 {
                     for (int j = i * i; j <= n; j += i) //j = i^2, i^2+i, i^2+2i, i^2+3i, ..., not exceeding n
                     {
-                        arr[j] = false;
+                        array[j] = false;
                     }
                 }
             }
+
             for (int i = n; i > 0; i--)
             {
-                if (arr[i] == true)
+                if (array[i] == true)
                 {
                     Console.Write(i);
                     break;

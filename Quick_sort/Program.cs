@@ -9,43 +9,50 @@ namespace MyProject
             int[] arr = new int[n];
 
             for (int i = 0; i < n; i++)
+            {
                 arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
 
             return arr;
         }
+
         static void QuickSort(int[] array, int startPosition, int endPosition)
         {
             if (endPosition <= startPosition)
             {
                 return;
             }
+
             int pivotPosition = GetPivotPosition(array, startPosition, endPosition);
             QuickSort(array, startPosition, pivotPosition - 1); //left partition sort
             QuickSort(array, pivotPosition + 1, endPosition); //right partition sort
         }
+
         static int GetPivotPosition(int[] array, int startPosition, int endPosition)
         {
             int pivot = array[endPosition];
-            int i = startPosition - 1;
+            int pivotPosition = startPosition - 1;
             int temp = 0;
 
-            for (int j = startPosition; j <= endPosition - 1; j++)
+            for (int i = startPosition; i <= endPosition - 1; i++)
             {
-                if (array[j] < pivot)
+                if (array[i] < pivot)
                 {
-                    i++;
-                    temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
+                    pivotPosition++;
+                    temp = array[pivotPosition];
+                    array[pivotPosition] = array[i];
+                    array[i] = temp;
                 }
             }
-            i++;
-            temp = array[i];
-            array[i] = array[endPosition];
+
+            pivotPosition++;
+            temp = array[pivotPosition];
+            array[pivotPosition] = array[endPosition];
             array[endPosition] = temp;
 
-            return i;
+            return pivotPosition;
         }
+
         static void Main(string[] args)
         {
             int n = Convert.ToInt32(Console.ReadLine());
@@ -58,7 +65,6 @@ namespace MyProject
             {
                 Console.WriteLine(myArray[i]);
             }
-
         }
     }
 }

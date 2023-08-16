@@ -13,6 +13,7 @@ namespace MyProject
 
             return arr;
         }
+
         static void MergeSort(int[] array, int leftIndex, int rightIndex)
         {
             if (leftIndex < rightIndex)
@@ -38,43 +39,45 @@ namespace MyProject
             {
                 leftArray[i] = array[leftIndex + i];
             }
+            
             for (int j = 0; j < rigthSize; j++)
             {
                 rightArray[j] = array[midIndex + 1 + j];
             }
 
-            int m = leftIndex, r = 0, l = 0; //indecies main array, right and left
+            int mainArrayIndex = leftArrayIndex, rightArrayIndex = 0, leftArrayIndex = 0; //indecies main array, right and left
 
-            while (l < leftSize && r < rigthSize)
+            while (leftArrayIndex < leftSize && rightArrayIndex < rigthSize)
             {
-                if (leftArray[l] <= rightArray[r])
+                if (leftArray[leftArrayIndex] <= rightArray[rightArrayIndex])
                 {
-                    array[m] = leftArray[l];
-                    m++;
-                    l++;
+                    array[mainArrayIndex] = leftArray[leftArrayIndex];
+                    mainArrayIndex++;
+                    leftArrayIndex++;
                 }
                 else
                 {
-                    array[m] = rightArray[r];
-                    m++;
-                    r++;
+                    array[mainArrayIndex] = rightArray[rightArrayIndex];
+                    mainArrayIndex++;
+                    rightArrayIndex++;
                 }
             }
 
-            while (l < leftSize)
+            while (leftArrayIndex < leftSize)
             {
-                array[m] = leftArray[l];
-                m++;
-                l++;
+                array[mainArrayIndex] = leftArray[leftArrayIndex];
+                mainArrayIndex++;
+                leftArrayIndex++;
             }
 
-            while (r < rigthSize)
+            while (rightArrayIndex < rigthSize)
             {
-                array[m] = rightArray[r];
-                m++;
-                r++;
+                array[mainArrayIndex] = rightArray[rightArrayIndex];
+                mainArrayIndex++;
+                rightArrayIndex++;
             }
         }
+
         static void Main(string[] args)
         {
             int n = Convert.ToInt32(Console.ReadLine());

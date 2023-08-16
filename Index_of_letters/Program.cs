@@ -9,10 +9,13 @@ namespace MyProject
             char[] arr = new char[26];
 
             for (int i = 0; i < 26; i++)
+            {
                 arr[i] = (char)(i + 97);
+            }
 
             return arr;
         }
+
         public static void PrintIndexOfLettersFormAlphabet(string str, char[] array)
         {
             foreach (char c in str)
@@ -20,6 +23,7 @@ namespace MyProject
                 Console.WriteLine(Array.IndexOf(array, c));
             }
         }
+
         static void Main(string[] args)
         {
             string inputWord = Console.ReadLine();
