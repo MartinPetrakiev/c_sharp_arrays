@@ -4,46 +4,46 @@ namespace MyProject
 {
     class Program
     {
-        static int FindMaxIncreasingSequenceLength(int[] arr)
+        static int FindMaxIncreasingSequenceLength(int[] arr, int n)
         {
-            int size = arr.Length;
-            int previousElement = arr[0];
-            int sequenceCounter = 1;
-            int maxSequence = 0;
-            for (int i = 1; i < size; i++)
+            int[] sequencesCount = new int[n];
+
+            for (int i = 0; i < n; i++)
             {
-                if (arr[i] <= previousElement || i == size - 1)
+                sequencesCount[i] = 1;
+
+                for (int j = 0; j < i; j++)
                 {
-                    if (sequenceCounter > maxSequence )
+                    if (array[i] >= array[j])
                     {
-                        maxSequence = sequenceCounter;
+                        sequencesCount[i] = Math.Max(sequencesCount[i], sequencesCount[j] + 1);
                     }
-                    previousElement = arr[i];
-                    sequenceCounter = 1;
-                    continue;
                 }
-                previousElement = arr[i];
-                sequenceCounter++;
-                maxSequence = sequenceCounter;
             }
-            return maxSequence;
+
+            int maxLength = sequencesCount.Max();
+            return maxLength;
         }
+
         static int[] InitializeIntArray(int n)
         {
             int[] arr = new int[n];
 
             for (int i = 0; i < n; i++)
+            {
                 arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
 
             return arr;
         }
+
         static void Main(string[] args)
         {
             int n = Convert.ToInt32(Console.ReadLine());
 
             int[] myArray = InitializeIntArray(n);
 
-            Console.WriteLine(FindMaxIncreasingSequenceLength(myArray));
+            Console.WriteLine(FindMaxIncreasingSequenceLength(myArray, n));
         }
     }
 }
