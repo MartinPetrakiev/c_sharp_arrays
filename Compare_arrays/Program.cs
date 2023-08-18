@@ -9,12 +9,16 @@ namespace MyProject
             int[] arr = new int[n];
 
             for (int i = 0; i < n; i++)
+            {
                 arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
 
             return arr;
         }
-        static string CompareArraysOfSizeN(int[] arrayOne, int[] arrayTwo, int size)
+
+        static string CompareArraysOfSizeN(int[] arrayOne, int[] arrayTwo)
         {
+            int size = arrayOne.Length;
             string output = "Equal";
 
             for (int i = 0; i < size; i++)
@@ -28,6 +32,7 @@ namespace MyProject
 
             return output;
         }
+
         static void Main(string[] args)
         {
             int n = Convert.ToInt32(Console.ReadLine()!);
@@ -35,7 +40,7 @@ namespace MyProject
             int[] arrayOne = InitializeArray(n);
             int[] arrayTwo = InitializeArray(n);
 
-            Console.WriteLine(CompareArraysOfSizeN(arrayOne, arrayTwo, n));
+            Console.WriteLine(CompareArraysOfSizeN(arrayOne, arrayTwo));
         }
     }
 }
