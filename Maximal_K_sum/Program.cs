@@ -13,14 +13,18 @@ namespace MyProject
             {
                 sum += sortedArray[i];
             }
+            
             return sum;
         }
+
         static int[] InitializeIntArray(int n)
         {
             int[] arr = new int[n];
 
             for (int i = 0; i < n; i++)
+            {
                 arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
 
             return arr;
         }
@@ -38,12 +42,15 @@ namespace MyProject
                         maxNumber = j;
                     }
                 }
-                var tempVar = numbersArray[maxNumber];
+
+                var swapNum = numbersArray[maxNumber];
                 numbersArray[maxNumber] = numbersArray[i];
-                numbersArray[i] = tempVar;
+                numbersArray[i] = swapNum;
             }
+
             return numbersArray;
         }
+
         static void Main(string[] args)
         {
             int n = Convert.ToInt32(Console.ReadLine());

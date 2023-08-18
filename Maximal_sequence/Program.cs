@@ -6,51 +6,40 @@ namespace MyProject
     {
         static int FindMaxEqualSequenceLength(int[] arr)
         {
-            Dictionary<int, int> arrayElementOccurances = new Dictionary<int, int>();
-            int currentSequenceCounter = 0;
-            int currentElement = arr[0];
+            int maxSequence = 1;
+            int currentSequenceCounter = 1;
 
             for (int i = 1; i < arr.Length; i++)
             {
-                if (arr[i] != arr[i - 1] && arr[i] != currentElement)
+                if (arr[i] >= arr[i - 1])
                 {
-                    currentSequenceCounter = 0;
-                    currentElement = arr[i];
-                    if (arrayElementOccurances.ContainsKey(currentElement))
+                    currentSequenceCounter++;
+                    if (currentSequenceCounter > maxSequence)
                     {
-                        if (arrayElementOccurances[currentElement] < currentSequenceCounter)
-                        {
-                            currentSequenceCounter++;
-                        }
+                        maxSequence = currentSequenceCounter;
                     }
-                    arrayElementOccurances[currentElement] = ++currentSequenceCounter;
                 }
                 else
                 {
-                    arrayElementOccurances[currentElement] = ++currentSequenceCounter;
+                    currentSequenceCounter = 1;
                 }
             }
-            
-            
-            int maxSequence = 0;
-            foreach (int key in arrayElementOccurances.Keys)
-            {
-                if (arrayElementOccurances[key] > maxSequence)
-                {
-                    maxSequence = arrayElementOccurances[key];
-                }
-            }
+
             return maxSequence;
         }
+
         static int[] InitializeIntArray(int n)
         {
             int[] arr = new int[n];
 
             for (int i = 0; i < n; i++)
+            {
                 arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
 
             return arr;
         }
+
         static void Main(string[] args)
         {
             int n = Convert.ToInt32(Console.ReadLine());
