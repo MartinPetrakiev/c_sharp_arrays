@@ -4,7 +4,7 @@ namespace MyProject
 {
     class Program
     {
-        static int[] InitializeInputIntArray(int n)
+        static int[] PopulateArrayFromInput(int n)
         {
             int[] arr = new int[n];
 
@@ -16,8 +16,9 @@ namespace MyProject
             return arr;
         }
 
-        static void FindMInimalRemovalsToSort(int[] array, int n)
+        static void FindMinimalRemovalsToSort(int[] array)
         {
+            int n = array.Length;
             int maxIncreasingSequence = FindMaxIncreasingSequenceLength(array, n);
             int minimalRemovals = n - maxIncreasingSequence;
 
@@ -57,9 +58,9 @@ namespace MyProject
         {
             int n = Convert.ToInt32(Console.ReadLine());
 
-            int[] myArray = InitializeInputIntArray(n);
+            int[] myArray = PopulateArrayFromInput(n);
 
-            FindMInimalRemovalsToSort(myArray, n);
+            FindMinimalRemovalsToSort(myArray);
         }
     }
 }
